@@ -7,6 +7,10 @@ import os
 app = Flask(__name__)
 
 @app.route('/')
+def home():
+    return render_template('invoiceform.html')
+
+@app.route('/home')
 def invoice():
     today = datetime.today().strftime("%B %d, %Y")
     details = {
